@@ -1,0 +1,63 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.block {
+    display: flex;
+    flex-direction: row;
+  &__grid {
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(5, 140px);
+    grid-gap: 0;
+    place-items: center;
+    margin: 0 auto;
+    max-width: 100%;
+
+
+    @include maxW-Tablet{
+            grid-template-columns: repeat(5, 80px);
+    }
+
+       @include maxW-Phone{
+            grid-template-columns: repeat(5, 60px);
+    }
+  }
+  &__image{
+    position: absolute;
+    top: 0;
+    
+  }
+&__buttons__box{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-left: 30px;
+}
+  &__button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    width: 180px;
+    height: 40px;
+   
+    background-color: rgb(214, 234, 248);
+    border: 1px solid rgb(5, 109, 117);
+    
+  
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+ 
+ 
+  color: #333;
+ 
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover{
+     background-color:rgb(5, 109, 117);
+  color: #fff;
+  }
+  }
+}

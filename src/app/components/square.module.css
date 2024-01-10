@@ -1,0 +1,44 @@
+/**
+//* Tablet
+*/
+/**
+//* Middle
+*/
+/**
+//* Desktop
+*/
+.block {
+  border: 1px solid rgb(163, 211, 226);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 140px;
+  height: 140px;
+  z-index: 100;
+}
+@media screen and (max-width: 768px) {
+  .block {
+    width: 80px;
+    height: 80px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .block {
+    width: 60px;
+    height: 60px;
+  }
+}
+.block:hover .block__number {
+  font-size: 50px;
+}
+.block__revealed {
+  background-color: rgb(248, 178, 158);
+}
+.block__number {
+  font-size: 20px;
+  margin: 0;
+  color: rgb(5, 109, 117);
+  transition: font-size 0.3s ease;
+}/*# sourceMappingURL=square.module.css.map */

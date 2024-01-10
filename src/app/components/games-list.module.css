@@ -1,0 +1,80 @@
+/**
+//* Tablet
+*/
+/**
+//* Middle
+*/
+/**
+//* Desktop
+*/
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-top: 50px;
+}
+@media screen and (max-width: 768px) {
+  .block {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .block {
+    margin-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    align-items: center;
+  }
+}
+.block__item {
+  display: flex;
+}
+@media screen and (max-width: 480px) {
+  .block__item {
+    flex-direction: column;
+  }
+}
+.block__item__title {
+  margin-bottom: 24px;
+  transition: text-shadow 0.3s ease-in-out;
+}
+.block__item__title:hover {
+  text-shadow: 1px 1px 2px rgba(0, 191, 255, 0.7);
+}
+@media screen and (max-width: 480px) {
+  .block__item__title {
+    margin-bottom: 18px;
+  }
+}
+.block__item__info {
+  margin-top: 44px;
+}
+@media screen and (max-width: 480px) {
+  .block__item__info {
+    margin-top: 18px;
+  }
+}
+.block__item__img {
+  border-radius: 18px;
+  cursor: pointer;
+  overflow: hidden;
+  margin-right: 30px;
+  transition: transform 0.3s ease-in-out;
+}
+@media screen and (max-width: 768px) {
+  .block__item__img {
+    width: 200px;
+    height: 200px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .block__item__img {
+    margin-right: 0;
+  }
+}
+.block__item__img:hover {
+  transform: scale(1.1);
+}/*# sourceMappingURL=games-list.module.css.map */

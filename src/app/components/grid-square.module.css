@@ -1,0 +1,62 @@
+/**
+//* Tablet
+*/
+/**
+//* Middle
+*/
+/**
+//* Desktop
+*/
+.block {
+  display: flex;
+  flex-direction: row;
+}
+.block__grid {
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(5, 140px);
+  grid-gap: 0;
+  place-items: center;
+  margin: 0 auto;
+  max-width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .block__grid {
+    grid-template-columns: repeat(5, 80px);
+  }
+}
+@media screen and (max-width: 480px) {
+  .block__grid {
+    grid-template-columns: repeat(5, 60px);
+  }
+}
+.block__image {
+  position: absolute;
+  top: 0;
+}
+.block__buttons__box {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-left: 30px;
+}
+.block__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  width: 180px;
+  height: 40px;
+  background-color: rgb(214, 234, 248);
+  border: 1px solid rgb(5, 109, 117);
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.block__button:hover {
+  background-color: rgb(5, 109, 117);
+  color: #fff;
+}/*# sourceMappingURL=grid-square.module.css.map */
