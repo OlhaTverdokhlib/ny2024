@@ -11,6 +11,18 @@ type ImageData = {
 };
 
 const imageDataList: ImageData[] = [
+  { image: "/pictures/samokat.png", answer: "Самокат" },
+  { image: "/pictures/dino.png", answer: "Динозавр" },
+  { image: "/pictures/amongus.png", answer: "Амонг ас" },
+  { image: "/pictures/pustushka.png", answer: "Пустушка" },
+  { image: "/pictures/lego.png", answer: "Lego" },
+  { image: "/pictures/toothbrush.png", answer: "Зубна щітка" },
+  { image: "/pictures/cup.png", answer: "Чашка" },
+  { image: "/pictures/apple.png", answer: "Яблуко" },
+  { image: "/pictures/hamster.png", answer: "Хомʼяк" },
+  { image: "/pictures/clip.png", answer: "Скріпка" },
+  { image: "/pictures/sky.png", answer: "Скай" },
+  { image: "/pictures/liubik.png", answer: "Любомир" },
   { image: "/pictures/kriper.png", answer: "Крипер" },
   { image: "/pictures/parusnik.png", answer: "Парусник" },
   { image: "/pictures/holka.png", answer: "Голка" },
@@ -18,16 +30,12 @@ const imageDataList: ImageData[] = [
   { image: "/pictures/hellokitti.png", answer: "Hello Kitty" },
   { image: "/pictures/eye.png", answer: "Око" },
   { image: "/pictures/door.png", answer: "Дверь" },
-  { image: "/pictures/cup.png", answer: "Чашка" },
   { image: "/pictures/backpack.png", answer: "Рюкзак" },
   { image: "/pictures/komar.png", answer: "Комар" },
-
-  // { image: "/pictures/ravl.png", answer: "Равлик" },
-  // { image: "/pictures/tree.png", answer: "Ялинка" },
-  // { image: "/pictures/kovzany.png", answer: "Ковзани" },
-  // { image: "/pictures/icecream.png", answer: "Морозиво" },
-  // { image: "/pictures/apple.png", answer: "Яблуко" },
-  // { image: "/pictures/sky.png", answer: "Скай" },
+  { image: "/pictures/ravl.png", answer: "Равлик" },
+  { image: "/pictures/tree.png", answer: "Ялинка" },
+  { image: "/pictures/kovzany.png", answer: "Ковзани" },
+  { image: "/pictures/icecream.png", answer: "Морозиво" },
 ];
 
 const GridSquare: React.FC = () => {
@@ -106,9 +114,27 @@ const GridSquare: React.FC = () => {
 
     return (
       <div className={gridSquareStyles.block}>
+        <div className={gridSquareStyles.block__buttons__box}>
+          <button
+            className={gridSquareStyles.block__button}
+            onClick={checkAnswer}
+          >
+            Перевірка
+          </button>
+          {showAnswer && <p>{imageData.answer}</p>}
+          {showAnswer && (
+            <button
+              className={gridSquareStyles.block__button}
+              onClick={handleNextImage}
+            >
+              Далі
+            </button>
+          )}
+        </div>
         <div className={gridSquareStyles.block__grid}>
           <div className={gridSquareStyles.block__image}>
             <Image
+              className={gridSquareStyles.block__image__size}
               src={imageData.image}
               alt="Зображення галереї - випадкова картинка для відгадування"
               width={700}
@@ -119,24 +145,6 @@ const GridSquare: React.FC = () => {
             />
           </div>
           {renderGrid()}
-        </div>
-
-        <div className={gridSquareStyles.block__buttons__box}>
-          <button
-            className={gridSquareStyles.block__button}
-            onClick={checkAnswer}
-          >
-            Перевірка відповіді
-          </button>
-          {showAnswer && <p>{imageData.answer}</p>}
-          {showAnswer && (
-            <button
-              className={gridSquareStyles.block__button}
-              onClick={handleNextImage}
-            >
-              Наступне зображення
-            </button>
-          )}
         </div>
       </div>
     );
